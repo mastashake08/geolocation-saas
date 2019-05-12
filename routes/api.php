@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Http\Resources\UserResource;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,5 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    return response()->json(new UserResource($request->user()));
 });
+
+Route::middleware('auth:api')->resource('/location','LocationController');
