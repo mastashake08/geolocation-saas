@@ -41,7 +41,7 @@ return json_decode((string) $response->getBody(), true);
 });
 
 Route::post('/register', function(Request $request){
-  var_dump($request->all());exit();
+  
   $user = \App\User::create([
      'name' => $request->name,
      'email' => $request->email,
