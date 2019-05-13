@@ -41,7 +41,7 @@ return json_decode((string) $response->getBody(), true);
 });
 
 Route::post('/register', function(Request $request){
-  $user = User::create([
+  $user = \App\User::create([
      'name' => $request->name,
      'email' => $request->email,
      'password' => Hash::make($request->password),
