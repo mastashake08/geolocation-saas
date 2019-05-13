@@ -21,7 +21,7 @@ class CreateLocationsTable extends Migration
             $table->timestamps();
         });
         Schema::table('locations', function($table) {
-          $table->foreign('user_id')->references('id')->on('users');
+          //$table->foreign('user_id')->references('id')->on('users');
         });
     }
 
